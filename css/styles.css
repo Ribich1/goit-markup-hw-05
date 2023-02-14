@@ -83,10 +83,6 @@ body {
   padding-left: 15px;
 }
 
-nav .current {
-  color: var(--pressed-txt-cl);
-}
-
 h2,
 h3,
 h4,
@@ -149,13 +145,17 @@ h6 {
   height: 40px;
   border-radius: 50%;
   background-color: var(--brand-bg-cl);
-}
-.link {
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-link:hover,
 .socials-link:focus {
   background-color: var(--pressed-bg-cl);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .socials-icon {
   fill: var(--light-bg-cl);
@@ -243,12 +243,33 @@ line-height: 24px; */
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-decoration: none;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+  transition-property: color;
 }
 .link:hover,
 .link:focus,
 .link.contacts:hover,
 .link.contacts:focus {
   color: var(--pressed-txt-cl);
+}
+nav .current {
+  color: var(--pressed-txt-cl);
+}
+
+.header-nav-link.current::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--pressed-bg-cl);
+}
+.header-nav-link {
+  position: relative;
+  display: block;
 }
 .contacts {
   font-weight: 400;
@@ -269,14 +290,17 @@ line-height: 24px; */
   line-height: 1.5;
   letter-spacing: 0.04em;
   cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-filter {
   min-width: 69px;
   min-height: 48px;
-  border-radius: 4px;
 
   padding: 12px 24px;
   border: none;
+  border-radius: 4px;
   background-color: var(--brand-bg-cl);
 
   color: var(--btn-txt-cl);
@@ -287,6 +311,9 @@ line-height: 24px; */
   letter-spacing: 0.04em;
 
   cursor: pointer;
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-filter:hover,
 .btn-filter:focus {
@@ -387,9 +414,9 @@ line-height: 24px; */
 }
 .feature-wrap {
   display: flex;
-  height: 112px;
   justify-content: center;
   align-items: center;
+  height: 112px;
   /* padding: 24px 100px; */
   margin-bottom: 8px;
   background-color: var(--light-bg-cl);
@@ -471,6 +498,9 @@ img {
   display: block;
 }
 .link-wrap {
+  transition-property: box-shadow;
+  transition-duration: 2500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .overlay {
@@ -524,6 +554,9 @@ img {
 }
 .socials-footer .socials-link {
   background-color: var(--bg-cl-ellipse);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .socials-footer .socials-link:hover,
 .socials-footer .socials-link:focus {
@@ -536,14 +569,17 @@ img {
   width: 168px;
   height: 88px;
   border: 1px solid var(--subtle-bg-cl);
-  border-radius: 4px;
   border-color: var(--subtle-bg-cl);
+  border-radius: 4px;
   color: var(--subtle-txt-cl);
+  transition-property: border-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .custom-link:hover,
 .custom-link:focus {
-  color: var(--pressed-bg-cl);
   border-color: var(--pressed-bg-cl);
+  color: var(--pressed-bg-cl);
 }
 .cust-icons {
   fill: currentColor;
