@@ -339,7 +339,7 @@ nav .current {
 }
 .logo {
   display: block;
-  /* margin-bottom: 16px; */
+  margin-bottom: 16px;
 
   /* IRIS */
 
@@ -594,7 +594,7 @@ img {
     |============================
   */
 .backdrop {
-  position: absolute;
+  position: fixed;
   width: 1440px;
   height: 677px;
   left: auto;
